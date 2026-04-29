@@ -30,11 +30,11 @@ if [ ${#HTML_FILES[@]} -eq 0 ]; then
   exit 0
 fi
 
-mkdir -p public-encrypted
+mkdir -p docs
 
 npx staticrypt "${HTML_FILES[@]}" \
   --password "$ENCRYPTION_PASSWORD" \
-  --directory public-encrypted \
+  --directory docs \
   --config .staticrypt.json
 
-echo "Encrypted ${#HTML_FILES[@]} file(s) → public-encrypted/"
+echo "Encrypted ${#HTML_FILES[@]} file(s) → docs/"

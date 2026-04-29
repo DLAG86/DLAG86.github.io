@@ -8,6 +8,6 @@ echo "Pre-commit: encrypting HTML files..."
 bash scripts/encrypt.sh
 
 # Stage encrypted output
-git add public-encrypted/
+git add docs/
 
 echo "Pre-commit: done."
