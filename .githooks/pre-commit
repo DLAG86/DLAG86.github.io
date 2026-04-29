@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+cd "$REPO_ROOT"
+
+echo "Pre-commit: encrypting HTML files..."
+bash scripts/encrypt.sh
+
+# Stage encrypted output
+git add public-encrypted/
+
+echo "Pre-commit: done."
